@@ -2,11 +2,15 @@
 const express = require('express');
 const cors = require('../node_modules/cors');
 const cookieParser = require('cookie-parser');
+const userRoutes = require('./routes/user.routes'); 
+const businessRoutes = require('./routes/business.routes');
+const locationRoutes = require('./routes/location.routes');
+const serviceRoutes = require('./routes/service.routes');
+const consultantRoutes = require('./routes/consultant.routes');
 
 //Imports
 require('../node_modules/dotenv').config();
-const DbConnection = require('../server/config/dbConnection');
-const indexRoutes = require('../server/routes/index.routes');  
+const DbConnection = require('../server/config/dbConnection'); 
 const Seeding = require('../server/utilities/seeding.data');
 
 const app = express();
@@ -14,8 +18,13 @@ const app = express();
 app.use(cors({origin:process.env.LOCAL_HOST, Credential: true}));
 app.use(cookieParser());
 app.use(express.json());
-
-app.use(`${process.env.BASE_URL}`, indexRoutes); 
+//Routes
+app.use(`${process.env.BASE_URL}/user`, userRoutes); 
+app.use(`${process.env.BASE_URL}/business`, businessRoutes);
+app.use(`${process.env.BASE_URL}/location`, locationRoutes);
+app.use(`${process.env.BASE_URL}/service`, serviceRoutes);
+app.use(`${process.env.BASE_URL}/consultant`, consultantRoutes);
+ 
   
 app.listen(process.env.PORT_NUM, async () => {
      DbConnection(process.env.DATABASE_URL);

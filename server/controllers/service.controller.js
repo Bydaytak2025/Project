@@ -7,7 +7,7 @@ const applyConsulting = async (req, res) => {
     res.send("Application for consulting submitted");
 };
 
-const processPayment = async (req, res) => { 
+const processPayment = async (req, res) => {  
     try {
         await paymentService(req).then(res => {
             if(res.ok) return res.json();
@@ -17,11 +17,11 @@ const processPayment = async (req, res) => {
     }
 };
 
-const marketingStrategyService = async (req, res) => {
+const locationMarkrtAnalysis = async (req, res) => {
     res.send("marketingStrategyService applied");
 };
 
-const marketAnalysisService  = async (req, res) => {
+const salesRevenueOptimization  = async (req, res) => {
     res.send("marketAnalysisService applied");
 };
 
@@ -29,7 +29,7 @@ const financialPlanningService  = async (req, res) => {
     res.send("financialPlanningService applied");
 };
 
-const locationOptimizationService  = async (req, res) => {
+const consultancyService  = async (req, res) => {
     res.send("locationOptimizationService applied");
 }; 
 
@@ -50,6 +50,6 @@ const updatePaymentStatus = async (req, res) => {
 };
 
 module.exports = { 
-    applyConsulting, processPayment, marketingStrategyService, marketAnalysisService, financialPlanningService, getServiceTest,
-    locationOptimizationService, getFullService, getApplicationStatus, updateApplication, updatePaymentStatus 
+    applyConsulting, processPayment, locationMarkrtAnalysis, salesRevenueOptimization, financialPlanningService, getServiceTest,
+    consultancyService, getFullService, getApplicationStatus, updateApplication, updatePaymentStatus 
 }; 

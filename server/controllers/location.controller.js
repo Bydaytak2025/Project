@@ -21,5 +21,4 @@ const getNearbyLocations = async (req, res) => {
 };
 
 module.exports = { addLocation, getAllLocations, getLocationById, deleteLocation, searchLocations, getNearbyLocations, getLocationTest};
-
-//use verify token middleware 
+ 

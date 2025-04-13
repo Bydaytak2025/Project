@@ -8,7 +8,6 @@ const locationSchema = new mongoose.Schema({
   latitude: { type: Decimal128, required: true },
   businessId: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Business' }]
 });
-
  
 const Location = mongoose.model('Location', locationSchema);
 

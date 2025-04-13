@@ -1,7 +1,7 @@
 const express = require('express'); 
 const { 
-    applyConsulting, processPayment, marketingStrategyService, marketAnalysisService, financialPlanningService, 
-    locationOptimizationService, getFullService, getApplicationStatus, updateApplication, updatePaymentStatus, getServiceTest 
+    applyConsulting, processPayment, locationMarkrtAnalysis, salesRevenueOptimization, financialPlanningService, 
+    consultancyService, getFullService, getApplicationStatus, updateApplication, updatePaymentStatus, getServiceTest 
 } = require('../controllers/service.controller');
 const router = express.Router();
 const { VerifyToken } = require('../middlewares/verifyToken'); 
@@ -12,15 +12,15 @@ router.get('/test_service', getServiceTest);
 
 router.post('/add', applyConsulting);
  
-router.post('/payment', processPayment);
+router.post('/payment', processPayment); 
 
-router.post('/marketingStrategyService', marketingStrategyService);
+router.post('/location-markrt-analysis', locationMarkrtAnalysis);
 
-router.post('/marketAnalysisService', marketAnalysisService);
+router.post('/sales-revenue-optimization', salesRevenueOptimization);
 
-router.post('/financialPlanningService', financialPlanningService);
+router.post('/financial-planning-service', financialPlanningService);
 
-router.post('/locationOptimizationService', locationOptimizationService);
+router.post('/consultancy', consultancyService);
 
 router.post('/getfullservice', getFullService);
 
