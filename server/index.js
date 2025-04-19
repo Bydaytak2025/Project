@@ -8,6 +8,8 @@ const locationRoutes = require('./routes/location.routes');
 const serviceRoutes = require('./routes/service.routes');
 const consultantRoutes = require('./routes/consultant.routes');
 
+const salesRoutes = require("./routes/salesOptimization.routes");
+
 //Imports
 require('../node_modules/dotenv').config();
 const DbConnection = require('../server/config/dbConnection'); 
@@ -24,6 +26,9 @@ app.use(`${process.env.BASE_URL}/business`, businessRoutes);
 app.use(`${process.env.BASE_URL}/location`, locationRoutes);
 app.use(`${process.env.BASE_URL}/service`, serviceRoutes);
 app.use(`${process.env.BASE_URL}/consultant`, consultantRoutes);
+
+// Route: /api/sales
+app.use("/api/sales", salesRoutes);
  
   
 app.listen(process.env.PORT_NUM, async () => {
